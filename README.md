@@ -1,12 +1,144 @@
 # Commerce Management System
 
-## 1. 运行方式
-- 安装依赖：`npm install`
-- 本地开发（H5）：`npm run dev:h5`
-- 构建（H5）：`npm run build`
+校园商会商家运营中台 — 基于 uni-app Vue3 构建的商会/商家/项目协同管理系统。
 
-## 2. 本次重构范围
-本次仅对首页做“运营驾驶舱（Campus Ops Cockpit）”重构，未推翻项目整体结构，保留：
+## 技术栈
+
+| 类别 | 技术 |
+|------|------|
+| 框架 | uni-app 3 (Vue 3 Composition API) |
+| 构建 | Vite 5 |
+| 状态管理 | Pinia 2 |
+| 样式 | SCSS + CSS Variables |
+| 语言 | JavaScript (JSDoc 类型注释) |
+| 图标 | 本地 SVG ChamberIcon 组件体系 |
+| 布局 | Flex / Grid |
+| 路由 | uni-app pages.json |
+| 数据链路 | page → hook → store → api → mock |
+
+## 项目概述
+
+面向校园商会的商家运营中台，覆盖公告发布、项目管理、活动组织、会员管理、入驻审批、财务流水、数据统计、扫码核销、合同管理、客服中心等全流程业务。当前版本为 H5 演示版，数据走 mock 层，可无后端独立运行。
+
+## 快速开始
+
+```bash
+# 安装依赖
+npm install
+
+# 本地开发（H5）
+npm run dev:h5
+
+# 生产构建
+npm run build
+```
+
+## Mock 演示账号
+
+| 页面 | 账号 | 密码/验证码 |
+|------|------|------------|
+| 登录 | admin | 123456 |
+| 登录 (验证码) | 任意手机号 | 123456 |
+| 注册 | 任意 | 验证码 123456 |
+
+## 页面路由
+
+### 一级 TabBar
+| 路径 | 页面 |
+|------|------|
+| `/pages/home/index` | 首页 · 运营驾驶舱 |
+| `/pages/message/index` | 消息中心 |
+| `/pages/project/index` | 项目中心 |
+| `/pages/mine/index` | 我的 |
+
+### 二级业务页
+| 路径 | 页面 |
+|------|------|
+| `/pages/auth/login` | 登录 |
+| `/pages/auth/register` | 注册 |
+| `/pages/chamber-square/index` | 项目广场 |
+| `/pages/search/index` | 搜索 |
+| `/pages/notice/index` | 公告列表 |
+| `/pages/notice/detail` | 公告详情 |
+| `/pages/todo/detail` | 待办详情 |
+| `/pages/project/list` | 全部项目 |
+| `/pages/project/detail` | 项目详情 |
+| `/pages/activity/index` | 活动列表 |
+| `/pages/activity/detail` | 活动详情 |
+| `/pages/member/index` | 会员中心 |
+| `/pages/apply/index` | 入驻申请 |
+| `/pages/finance/index` | 财务管理 |
+| `/pages/finance/profit` | 收益明细 |
+| `/pages/statistics/index` | 数据统计 |
+| `/pages/more/index` | 更多功能 |
+| `/pages/tools/scan` | 扫码核销 |
+| `/pages/tools/qrcode` | 收款码 |
+| `/pages/tools/export` | 数据导出 |
+| `/pages/tools/message` | 消息通知 |
+| `/pages/tools/contract` | 合同管理 |
+| `/pages/tools/service` | 客服中心 |
+
+## 目录结构
+
+```text
+src/
+├── pages/                          # uni-app 路由入口（薄壳，import 模块组件）
+│   ├── auth/    login.vue, register.vue
+│   ├── home/    index.vue
+│   ├── message/ index.vue
+│   ├── project/ index.vue, list.vue, detail.vue
+│   ├── mine/    index.vue
+│   ├── tools/   scan.vue, qrcode.vue, export.vue, message.vue, contract.vue, service.vue
+│   └── ...
+├── modules/chamber/                # 核心业务模块
+│   ├── api/         chamber.api.js, auth.api.js
+│   ├── components/  state/ (SkeletonBlock, PageState, etc.), ui/ (ChamberIcon, etc.), business/
+│   ├── hooks/       useHomeDashboard.js, useAuth.js, useContractTool.js, useServiceTool.js, ...
+│   ├── mock/        chamber.mock.js, auth.mock.js
+│   ├── pages/       home/, message/, project/, mine/, auth/, tools/, ...
+│   ├── store/       chamber.store.js, auth.store.js
+│   ├── styles/      variables.scss
+│   ├── types/       index.d.ts
+│   └── utils/       toast.js
+└── components/      CustomTabBar.vue
+```
+
+## 数据链路
+
+所有页面遵循统一数据链路：
+
+```text
+page → hook → store → api → mock
+```
+
+- **Page** 只组合子组件和传参
+- **Hook** 封装业务逻辑 + pageState + toast 反馈
+- **Store** Pinia 状态管理 + getters + actions
+- **API** 接口层，当前调用 mock
+- **Mock** 模拟后端数据，支持状态变更
+
+## Store 说明
+
+| Store | 文件 | 用途 |
+|-------|------|------|
+| `useChamberStore` | `chamber.store.js` | 首页、消息、项目、工具、财务等全部业务状态 |
+| `useAuthStore` | `auth.store.js` | 登录/注册/退出、token 持久化 |
+
+## 状态设计
+
+每个页面统一覆盖：
+
+- `skeleton` — 首次加载骨架屏
+- `error` — 加载失败 + 重试
+- `empty` — 数据为空
+- `normal` — 正常展示
+- action loading / toast 反馈
+
+---
+
+## 重构历程
+
+### 本次重构范围
 - `uni-app Vue3 + Vite + JavaScript`
 - `Pinia` 状态管理
 - `page -> hook -> store -> api -> mock` 数据链路
