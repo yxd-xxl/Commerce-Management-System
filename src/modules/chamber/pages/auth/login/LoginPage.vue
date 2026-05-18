@@ -3,6 +3,17 @@
     <view class="page-spacer" />
     <LoginBrandHero />
 
+    <view v-if="showHint" class="mock-hint">
+      <view class="hint-content">
+        <text class="hint-title">Mock 演示账号</text>
+        <text class="hint-text">账号登录：admin / 123456</text>
+        <text class="hint-text">验证码登录：任意手机号 / 123456</text>
+      </view>
+      <view class="hint-close" @click="showHint = false">
+        <text class="close-x">×</text>
+      </view>
+    </view>
+
     <view class="form-area">
       <LoginModeTabs :mode="loginMode" @update:mode="loginMode = $event" />
 
@@ -61,6 +72,7 @@ const password = ref('')
 const phone = ref('')
 const code = ref('')
 const rememberMe = ref(false)
+const showHint = ref(true)
 
 const canSubmit = computed(() => {
   if (loginMode.value === 'password') {
@@ -112,6 +124,45 @@ const goRegister = () => {
 }
 .page-spacer {
   height: 60rpx;
+}
+.mock-hint {
+  margin: 20rpx 28rpx 0;
+  padding: 18rpx 20rpx;
+  background: #fffbeb;
+  border: 1rpx solid #fde68a;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: flex-start;
+  gap: 12rpx;
+}
+.hint-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+.hint-title {
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #92400e;
+}
+.hint-text {
+  font-size: 20rpx;
+  color: #a16207;
+  font-family: monospace;
+}
+.hint-close {
+  flex-shrink: 0;
+  width: 36rpx;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close-x {
+  font-size: 32rpx;
+  color: #a16207;
+  line-height: 1;
 }
 .form-area {
   display: flex;
