@@ -1,0 +1,3 @@
+﻿<template><view class="state"><text class="title">{{title}}</text><text class="desc">{{desc}}</text><button v-if="actionText" class="btn" @click="$emit('action')">{{actionText}}</button></view></template>
+<script setup>defineProps({title:String,desc:String,actionText:String});defineEmits(['action'])</script>
+<style scoped>.state{background:#fff;border-radius:18rpx;padding:24rpx;text-align:center}.title{display:block;font-size:28rpx;color:#172033;font-weight:700}.desc{display:block;margin-top:8rpx;color:#75839b}.btn{margin-top:12rpx;height:58rpx;border:none;border-radius:999rpx;background:#eef3ff;color:#245bff;padding:0 24rpx}</style>

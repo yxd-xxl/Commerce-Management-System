@@ -1,0 +1,3 @@
+﻿<template><view class="card"><view class="head"><text class="title">搜索历史</text><text class="clear" @click="$emit('clear')">清空历史</text></view><view class="tags"><view v-for="item in history" :key="item" class="tag" @click="$emit('click',item)">{{item}}</view></view></view></template>
+<script setup>defineProps({history:Array});defineEmits(['click','clear'])</script>
+<style scoped>.card{background:#fff;border-radius:20rpx;padding:16rpx}.head{display:flex;justify-content:space-between}.title{font-size:30rpx;font-weight:700;color:#172033}.clear{color:#8a97ad}.tags{display:flex;flex-wrap:wrap;gap:10rpx;margin-top:10rpx}.tag{padding:8rpx 16rpx;border-radius:999rpx;background:#f2f5fb;color:#5f6e88}</style>

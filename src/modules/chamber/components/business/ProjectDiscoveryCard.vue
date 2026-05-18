@@ -1,0 +1,3 @@
+﻿<template><view class="card" @click="$emit('click',item)"><text class="name">{{item.name}}</text><text class="meta">{{item.categoryText}} · {{item.statusText}}</text><text class="meta">关注 {{item.followCount||0}} · 成员 {{item.memberCount||0}}</text><view class="bar"><view class="fill" :style="{width:(item.progress||0)+'%'}"/></view></view></template>
+<script setup>defineProps({item:Object});defineEmits(['click'])</script>
+<style scoped>.card{background:#fff;border-radius:18rpx;padding:14rpx;display:grid;gap:5rpx}.name{font-size:26rpx;color:#172033;font-weight:700}.meta{font-size:21rpx;color:#6e7d95}.bar{height:8rpx;border-radius:99rpx;background:#eef2fb}.fill{height:100%;background:#2f6fff;border-radius:99rpx}</style>

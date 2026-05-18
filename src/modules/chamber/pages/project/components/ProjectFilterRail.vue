@@ -1,0 +1,3 @@
+﻿<template><scroll-view scroll-x class="rail"><view class="wrap"><view v-for="item in categories" :key="item.key" class="chip" :class="{active:activeCategory===item.key}" @click="$emit('change',item.key)">{{item.label}} {{item.count}}</view></view></scroll-view></template>
+<script setup>defineProps({categories:Array,activeCategory:String});defineEmits(['change'])</script>
+<style scoped>.rail{margin-top:14rpx;white-space:nowrap}.wrap{display:flex;gap:12rpx}.chip{height:64rpx;padding:0 24rpx;border-radius:999rpx;background:#fff;border:1rpx solid #dce5f5;color:#5b6883;display:inline-flex;align-items:center}.chip.active{color:#fff;background:linear-gradient(120deg,#3a77ff,#245bff);border-color:transparent}</style>

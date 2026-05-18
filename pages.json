@@ -1,0 +1,51 @@
+﻿{
+  "pages": [
+    { "path": "pages/home/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "商会商家中心", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/message/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "消息中心", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/project/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "项目中心", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/mine/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/chamber-square/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "项目广场", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/search/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "搜索", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/notice/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "公告", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/notice/detail", "style": { "navigationStyle": "custom", "navigationBarTitleText": "公告详情", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/todo/detail", "style": { "navigationStyle": "custom", "navigationBarTitleText": "待办详情", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/project/list", "style": { "navigationStyle": "custom", "navigationBarTitleText": "全部项目", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/project/detail", "style": { "navigationStyle": "custom", "navigationBarTitleText": "项目详情", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/activity/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "活动", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/activity/detail", "style": { "navigationStyle": "custom", "navigationBarTitleText": "活动详情", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/member/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "会员中心", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/finance/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "财务管理", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/finance/profit", "style": { "navigationStyle": "custom", "navigationBarTitleText": "收益明细", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/statistics/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "数据统计", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/apply/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "入驻申请", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/more/index", "style": { "navigationStyle": "custom", "navigationBarTitleText": "更多功能", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/tools/scan", "style": { "navigationStyle": "custom", "navigationBarTitleText": "扫码核销", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/tools/qrcode", "style": { "navigationStyle": "custom", "navigationBarTitleText": "收款码", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/tools/export", "style": { "navigationStyle": "custom", "navigationBarTitleText": "数据导出", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/tools/message", "style": { "navigationStyle": "custom", "navigationBarTitleText": "消息通知", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/tools/contract", "style": { "navigationStyle": "custom", "navigationBarTitleText": "合同管理", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/tools/service", "style": { "navigationStyle": "custom", "navigationBarTitleText": "客服中心", "navigationBarBackgroundColor": "#FFFFFF", "navigationBarTextStyle": "black" } },
+    { "path": "pages/auth/login", "style": { "navigationStyle": "custom", "navigationBarTitleText": "登录", "navigationBarBackgroundColor": "#F5F7FB", "navigationBarTextStyle": "black" } },
+    { "path": "pages/auth/register", "style": { "navigationStyle": "custom", "navigationBarTitleText": "注册", "navigationBarBackgroundColor": "#F5F7FB", "navigationBarTextStyle": "black" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "商会管理系统",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F5F7FA"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

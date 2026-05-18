@@ -1,0 +1,12 @@
+﻿@use '@/modules/chamber/styles/variables.scss' as *;
+
+/* Legacy variables kept for compatibility */
+$primary-color: $chamber-primary;
+$primary-light-bg: $chamber-primary-soft;
+$page-bg: $chamber-page-bg;
+$text-title: $chamber-text-title;
+$text-body: $chamber-text-body;
+$text-assist: $chamber-text-assist;
+$card-radius: $chamber-radius-card;
+$btn-radius: $chamber-radius-pill;
+$module-gap: $chamber-gap-module;

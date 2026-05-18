@@ -1,0 +1,71 @@
+$chamber-primary: #245bff;
+$chamber-primary-dark: #173fcc;
+$chamber-primary-light: #eaf0ff;
+$chamber-primary-soft: #eaf0ff;
+
+$chamber-secondary: #12b8a6;
+$chamber-secondary-dark: #078c80;
+$chamber-secondary-light: #e8faf7;
+
+$chamber-accent: #f6b44b;
+$chamber-accent-dark: #d88a16;
+$chamber-accent-light: #fff4df;
+
+$chamber-page-bg: #f5f7fb;
+$chamber-bg-page: #f5f7fb;
+$chamber-card-bg: #ffffff;
+$chamber-bg-card: #ffffff;
+$chamber-bg-subtle: #f8fafe;
+$chamber-bg-deep: #101b3d;
+
+$chamber-text-title: #172033;
+$chamber-text-main: #172033;
+$chamber-text-body: #3d4a66;
+$chamber-text-regular: #3d4a66;
+$chamber-text-assist: #69758c;
+$chamber-text-secondary: #69758c;
+$chamber-text-placeholder: #a7b0c0;
+$chamber-text-inverse: #ffffff;
+
+$status-success: #18a058;
+$status-success-bg: #eaf8f0;
+$status-warning: #f59e0b;
+$status-warning-bg: #fff7e8;
+$status-danger: #e5484d;
+$status-danger-bg: #fff0f0;
+$status-info: #245bff;
+$status-info-bg: #eaf0ff;
+$status-pending: #7c5cff;
+$status-pending-bg: #f1eeff;
+$status-disabled: #b8c0cc;
+$status-disabled-bg: #f1f3f6;
+
+$skeleton-bg: #eef2f8;
+$skeleton-highlight: #f7faff;
+
+$radius-xs: 8rpx;
+$radius-sm: 12rpx;
+$radius-md: 18rpx;
+$radius-lg: 24rpx;
+$radius-xl: 32rpx;
+$radius-pill: 999rpx;
+
+$chamber-radius-card: 16rpx;
+$chamber-radius-pill: 40rpx;
+$chamber-gap-module: 24rpx;
+
+$shadow-card: 0 8rpx 24rpx rgba(20, 35, 80, 0.06);
+$shadow-float: 0 16rpx 48rpx rgba(20, 35, 80, 0.14);
+
+$page-padding-x: 32rpx;
+$page-padding-y: 24rpx;
+
+$font-family-base:
+  -apple-system,
+  BlinkMacSystemFont,
+  'PingFang SC',
+  'HarmonyOS Sans SC',
+  'Microsoft YaHei',
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
