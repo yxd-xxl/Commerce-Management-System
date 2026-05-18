@@ -1,37 +1,38 @@
 <template>
   <view class="custom-tabbar">
     <view
-      class="tabbar-item"
       v-for="item in tabs"
       :key="item.pagePath"
+      class="tabbar-item"
       @click="switchTab(item)"
     >
-      <view class="tabbar-icon">
-        <image class="icon-img" :src="current === item.pagePath ? item.iconActive : item.icon" mode="aspectFit" />
+      <view class="tabbar-icon" :class="{ active: current === item.pagePath }">
+        <ChamberIcon :name="item.icon" :size="22" />
       </view>
       <text class="tabbar-text" :class="{ active: current === item.pagePath }">{{ item.text }}</text>
+      <view v-if="item.badge" class="tabbar-badge">{{ item.badge > 99 ? '99+' : item.badge }}</view>
     </view>
   </view>
 </template>
 
 <script setup>
+import ChamberIcon from '@/modules/chamber/components/ui/ChamberIcon.vue'
+
 const props = defineProps({
-  current: {
-    type: String,
-    default: ''
-  }
+  current: { type: String, default: '' },
+  unreadCount: { type: Number, default: 0 }
 })
 
 const tabs = [
-  { pagePath: 'pages/home/index', text: '首页', icon: '/static/tabs/home.svg', iconActive: '/static/tabs/home-active.svg' },
-  { pagePath: 'pages/message/index', text: '消息', icon: '/static/tabs/message.svg', iconActive: '/static/tabs/message-active.svg' },
-  { pagePath: 'pages/project/index', text: '项目', icon: '/static/tabs/project.svg', iconActive: '/static/tabs/project-active.svg' },
-  { pagePath: 'pages/mine/index', text: '我的', icon: '/static/tabs/mine.svg', iconActive: '/static/tabs/mine-active.svg' }
+  { pagePath: 'pages/home/index', text: '首页', icon: 'home', badge: 0 },
+  { pagePath: 'pages/message/index', text: '消息', icon: 'message', badge: 0 },
+  { pagePath: 'pages/project/index', text: '项目', icon: 'folder', badge: 0 },
+  { pagePath: 'pages/mine/index', text: '我的', icon: 'user', badge: 0 }
 ]
 
 const switchTab = (item) => {
   if (props.current === item.pagePath) return
-  uni.redirectTo({ url: '/' + item.pagePath })
+  uni.reLaunch({ url: '/' + item.pagePath })
 }
 </script>
 
@@ -42,20 +43,22 @@ const switchTab = (item) => {
   left: 0;
   right: 0;
   height: 100rpx;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20rpx);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid #eef2f8;
   z-index: 999;
   padding-bottom: env(safe-area-inset-bottom);
 }
 
 .tabbar-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rpx;
+  gap: 2rpx;
   flex: 1;
 }
 
@@ -65,20 +68,40 @@ const switchTab = (item) => {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #8b95ad;
+  border-radius: 14rpx;
+  transition: all 0.2s;
 }
 
-.icon-img {
-  width: 44rpx;
-  height: 44rpx;
+.tabbar-icon.active {
+  color: #245bff;
+  background: #eef3ff;
 }
 
 .tabbar-text {
-  font-size: 20rpx;
-  color: #999999;
+  font-size: 19rpx;
+  color: #8b95ad;
+  transition: color 0.2s;
 }
 
 .tabbar-text.active {
-  color: #FF6F3D;
-  font-weight: bold;
+  color: #245bff;
+  font-weight: 600;
+}
+
+.tabbar-badge {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translateX(32rpx);
+  min-width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  border-radius: 999rpx;
+  background: #e5484d;
+  color: #fff;
+  font-size: 17rpx;
+  padding: 0 6rpx;
 }
 </style>

@@ -366,12 +366,12 @@ chamberMockData.mineDashboard = {
     trendType: 'up'
   },
   tools: [
-    { key: 'scan', title: '扫码核销', desc: '活动/订单快速核销', path: '/pages/tools/scan', badge: 0, colorType: 'blue' },
-    { key: 'qrcode', title: '收款码', desc: '展示商户收款码', path: '/pages/tools/qrcode', colorType: 'green' },
-    { key: 'export', title: '数据导出', desc: '经营数据一键导出', path: '/pages/tools/export', colorType: 'purple' },
-    { key: 'message', title: '消息通知', desc: '通知配置与记录', path: '/pages/tools/message', badge: 3, colorType: 'orange' },
-    { key: 'contract', title: '合同管理', desc: '查看合同文件', path: '/pages/tools/contract', colorType: 'blue' },
-    { key: 'service', title: '客服中心', desc: '联系平台支持', path: '/pages/tools/service', colorType: 'teal' }
+    { key: 'scan', title: '扫码核销', desc: '活动/订单快速核销', icon: 'scan', path: '/pages/tools/scan', badge: 0, colorType: 'blue' },
+    { key: 'qrcode', title: '收款码', desc: '展示商户收款码', icon: 'qr-code', path: '/pages/tools/qrcode', colorType: 'green' },
+    { key: 'export', title: '数据导出', desc: '经营数据一键导出', icon: 'download', path: '/pages/tools/export', colorType: 'purple' },
+    { key: 'message', title: '消息通知', desc: '通知配置与记录', icon: 'bell', path: '/pages/tools/message', badge: 3, colorType: 'orange' },
+    { key: 'contract', title: '合同管理', desc: '查看合同文件', icon: 'file', path: '/pages/tools/contract', colorType: 'blue' },
+    { key: 'service', title: '客服中心', desc: '联系平台支持', icon: 'headphones', path: '/pages/tools/service', colorType: 'teal' }
   ],
   permissions: [
     { key: 'notice', label: '公告发布', enabled: true },

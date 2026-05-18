@@ -540,3 +540,21 @@ src/modules/chamber/
 
 ### Build
 - `npm run build` verified passing.
+
+## 2026-05-19 Update (Global TabBar + Icon System Fix)
+
+### TabBar Unified
+- Rewrote `src/components/CustomTabBar.vue`:
+  - Replaced image-based icons with `ChamberIcon` SVG inline icons (home / message / folder / user)
+  - Active color changed from orange `#FF6F3D` → system blue `#245bff`
+  - Active icon has light blue rounded background
+  - Added badge support
+  - Navigation changed from `redirectTo` → `reLaunch`
+- All four TabBar pages share the same component.
+
+### Icon System Fix
+- `ToolEntryItem.vue` — Added `ChamberIcon` rendering (was empty colored div)
+- `PermissionBadge.vue` — Added `ChamberIcon` with per-permission mapping
+- `UserIdentityPanel.vue` — Avatar area now shows user icon (was empty)
+- `ChamberIcon.vue` — Added alias table: more→grid, export→download, contract→file, service→headphones, qrcode→qr-code, stats→chart, megaphone→bell, compass→search, wrench→settings
+- `chamber.mock.js` — Added missing `icon` fields to `mineDashboard.tools`
